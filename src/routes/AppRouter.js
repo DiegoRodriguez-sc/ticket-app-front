@@ -14,7 +14,7 @@ const AppRouter = () => {
       <Layout style={{ minHeight: "100vh" }}>
         <Sidebar />
         <Layout className="site-layout">
-          <Content style={{ margin: "0 16px" }}>
+          <Content style={{ margin: "24px 16px", padding:24 }}>
             <Routes>
               <Route path="/" element={<Ingresar />} />
               <Route path="/cola" element={<Cola />} />
