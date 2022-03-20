@@ -5,6 +5,7 @@ import Sidebar from "../components/SideBar";
 import Cola from "../pages/Cola";
 import CrearTicket from "../pages/CrearTicket";
 import Ingresar from "../pages/Ingresar";
+import Escritorio from "../pages/Escritorio";
 
 const { Content, Footer } = Layout;
 
@@ -14,11 +15,12 @@ const AppRouter = () => {
       <Layout style={{ minHeight: "100vh" }}>
         <Sidebar />
         <Layout className="site-layout">
-          <Content style={{ margin: "24px 16px", padding:24 }}>
+          <Content style={{ margin: "24px 16px", padding: 24 }}>
             <Routes>
               <Route path="/" element={<Ingresar />} />
               <Route path="/cola" element={<Cola />} />
               <Route path="/ticket" element={<CrearTicket />} />
+              <Route path="/escritorio" element={<Escritorio />} />
             </Routes>
           </Content>
 
