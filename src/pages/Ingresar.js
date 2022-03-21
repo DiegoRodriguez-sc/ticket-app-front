@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Form, Input, Button, InputNumber, Typography, Divider } from "antd";
-import { useNavigate } from "react-router-dom";
 import { useHideMenu } from "../hooks/useHideMenu";
+import { getUsuarioStorage } from "../helper/getUsuarioStorage";
 
+const { Title } = Typography;
 
 const Ingresar = () => {
   let navigate = useNavigate();
+  const [usuario] = useState(getUsuarioStorage());
   useHideMenu(false);
   
   const onFinish = (values) => {
-    console.log("Success:", values);
+    localStorage.setItem("agente", values.agente);
+    localStorage.setItem("escritorio", values.escritorio);
     navigate("/escritorio");
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-  const { Title } = Typography;
+
+  if(usuario.agente && usuario.escritorio){
+    return <Navigate to={"/escritorio"}/>
+  }
+  
   return (
     <>
       <Title level={2}>Ingresar</Title>

@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { Button, Col, Divider, Row, Typography } from "antd";
 import { CloseCircleOutlined, RightOutlined } from "@ant-design/icons";
+import { getUsuarioStorage } from "../helper/getUsuarioStorage";
 
 const { Title, Text } = Typography;
 
 const Escritorio = () => {
+  const [usuario] = useState(getUsuarioStorage());
+
+  if (!usuario.agente || !usuario.escritorio) {
+    return <Navigate to={"/"} />;
+  }
+
   return (
     <>
       <Row>
@@ -22,18 +30,16 @@ const Escritorio = () => {
       </Row>
       <Divider />
       <Row>
-       <Col>
-         <Text>Esta atendiendo el ticket numero: </Text>
-         <Text style={{fontSize:30}} type="danger"  >55</Text>
-       </Col>
+        <Col>
+          <Text>Esta atendiendo el ticket numero: </Text>
+          <Text style={{ fontSize: 30 }} type="danger">
+            55
+          </Text>
+        </Col>
       </Row>
       <Row>
         <Col offset={18} span={6} align="right">
-          <Button 
-             shape="round"
-             type="primary"
-      
-            >
+          <Button shape="round" type="primary">
             Siguiente
             <RightOutlined />
           </Button>
