@@ -1,14 +1,14 @@
 import React, { createContext } from "react";
 import { useSocket } from "../hooks/useSocket";
 
-export const Socketcontext = createContext();
+export const SocketContext = createContext();
 
 const SocketProvider = ({ children }) => {
-  const { socket, online } = useSocket();
+  const { socket, online } = useSocket("http://localhost:8080");
   return (
-    <Socketcontext.Provider value={{ socket, online }}>
+    <SocketContext.Provider value={{ socket, online }}>
       {children}
-    </Socketcontext.Provider>
+    </SocketContext.Provider>
   );
 };
 
