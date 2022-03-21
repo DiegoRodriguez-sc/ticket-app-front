@@ -1,9 +1,13 @@
 import React from "react";
 import { Form, Input, Button, InputNumber, Typography, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useHideMenu } from "../hooks/useHideMenu";
+
 
 const Ingresar = () => {
   let navigate = useNavigate();
+  useHideMenu(false);
+  
   const onFinish = (values) => {
     console.log("Success:", values);
     navigate("/escritorio");
