@@ -32,12 +32,12 @@ const Escritorio = () => {
     <>
       <Row>
         <Col span={20}>
-          <Title level={2}>{usuario.agente}</Title>
-          <Text>Usted está trabajando en el escritorio: </Text>
-          <Text type="success">{usuario.escritorio}</Text>
+          <Title level={1}>{usuario.agente.toUpperCase()}</Title>
+          <Text style={{fontSize:15}} >Usted está trabajando en el escritorio: </Text>
+          <Text style={{fontSize:20}} type="success">{usuario.escritorio}</Text>
         </Col>
         <Col span={4} align="right">
-          <Button shape="round" type="danger" onClick={handleSalir}>
+          <Button size="large" shape="round" type="danger" onClick={handleSalir}>
             <CloseCircleOutlined />
             Salir
           </Button>
@@ -47,7 +47,7 @@ const Escritorio = () => {
       {ticket && (
         <Row>
           <Col>
-            <Text>Esta atendiendo el ticket numero: </Text>
+            <Text style={{fontSize:20}} >Esta atendiendo el ticket numero: </Text>
             <Text style={{ fontSize: 30 }} type="danger">
               {ticket.number}
             </Text>
@@ -56,7 +56,7 @@ const Escritorio = () => {
       )}
       <Row>
         <Col offset={18} span={6} align="right">
-          <Button shape="round" type="primary" onClick={handleSiguiente}>
+          <Button size="large" shape="round" type="primary" onClick={handleSiguiente}>
             Siguiente
             <RightOutlined />
           </Button>

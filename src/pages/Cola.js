@@ -37,8 +37,8 @@ const Cola = () => {
                 <Card
                   style={{ width: 300, marginTop: 16 }}
                   actions={[
-                    <Tag color="volcano"> {item.agent} </Tag>,
-                    <Tag color="magenta"> Escritorio: {item.desk} </Tag>,
+                    <Tag style={{fontSize:15}} color="volcano"> {item.agent} </Tag>,
+                    <Tag style={{fontSize:15}} color="magenta"> Escritorio: {item.desk} </Tag>,
                   ]}
                 >
                   <Title> No. {item.number}</Title>
