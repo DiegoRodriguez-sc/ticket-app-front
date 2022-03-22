@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "antd";
+
 import Sidebar from "../components/SideBar";
 import Cola from "../pages/Cola";
 import CrearTicket from "../pages/CrearTicket";
@@ -12,20 +13,21 @@ const { Content, Footer } = Layout;
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout className="layout">
         <Sidebar />
-        <Layout className="site-layout">
-          <Content style={{ margin: "24px 16px", padding: 24 }}>
+        <Content style={{ padding: "0 50px" }}>
+          <div className="site-layout-content">
             <Routes>
               <Route path="/" element={<Ingresar />} />
               <Route path="/cola" element={<Cola />} />
               <Route path="/ticket" element={<CrearTicket />} />
               <Route path="/escritorio" element={<Escritorio />} />
             </Routes>
-          </Content>
-
-          <Footer style={{ textAlign: "center" }}>Footer</Footer>
-        </Layout>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          Diego Rodriguez
+        </Footer>
       </Layout>
     </BrowserRouter>
   );
