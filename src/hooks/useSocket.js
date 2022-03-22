@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import io from "socket.io-client";
+const { io } = require("socket.io-client");
 
 export const useSocket = (serverPath) => {
-  const socket = useMemo(() => io.connect(serverPath), [serverPath]);
+  const socket = useMemo(() => io.connect( serverPath), [serverPath]);
   const [online, setOnline] = useState(false);
 
   useEffect(() => {
